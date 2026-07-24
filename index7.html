@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Surprise ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff4d6d,#ff758f,#ff9a9e,#fad0c4);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:90%;
+    max-width:650px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 40px rgba(255,255,255,.3);
+    animation:pop 1s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+button{
+    padding:18px 40px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff2d55;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ffe066;
+}
+
+.heart{
+    position:absolute;
+    color:#ff1744;
+    font-size:30px;
+    animation:float 5s linear forwards;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0) scale(0.5);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh) scale(2);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>❤️ Gotcha! ❤️</h1>
+
+    <p>
+        You clicked every single button... 😆<br><br>
+
+        I knew your curiosity would win! ❤️<br><br>
+
+        But this wasn't really a prank.<br>
+        It was just my little way of leading you here... because I wanted to tell you something.
+    </p>
+
+    <h2 style="margin-bottom:25px;">
+        💖 I Love You So Much! 💖
+    </h2>
+
+    <p>
+        Thank you for being part of my life.<br>
+        Your smile makes my days brighter, and every moment with you means the world to me.<br><br>
+
+        I hope this made you smile. ❤️
+    </p>
+
+    <button onclick="loveRain()">
+        ❤️ Click for More Love ❤️
+    </button>
+</div>
+
+<script>
+function loveRain(){
+    for(let i=0;i<60;i++){
+        let heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerHTML="❤";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.top="100vh";
+        heart.style.fontSize=(20+Math.random()*40)+"px";
+        heart.style.animationDuration=(3+Math.random()*3)+"s";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },6000);
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 2</title>
+<link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>😨 Seriously...</h1>
+<a href="/index3.html">
+    <button onclick="window.location='page3.html'">
+        Listen to me don't click it!
+    </button>
+    </a>
+</div>
+
+<script>
+for(let i=0;i<25;i++){
+    let c=document.createElement("div");
+    c.className="circle";
+    c.style.width=Math.random()*80+20+"px";
+    c.style.height=c.style.width;
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=Math.random()*10+10+"s";
+    c.style.animationDelay=Math.random()*10+"s";
+    document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
